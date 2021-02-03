@@ -22,6 +22,8 @@ const server = http
         const heroArr = JSON.parse(data);
         const heroItem = heroArr.find((item) => item.id == id);
         // res.find((item)=>{}) 是一种带查找功能的遍历 遍历顺便查找值 如果找到就返回
+
+        res.setHeader("access-control-allow-origin", "*");
         res.setHeader("content-type", "text/html;charset=utf8");
         res.end(`{
           "code": 200,
