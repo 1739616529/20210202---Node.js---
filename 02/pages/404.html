@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      li{
+        list-style: none;
+        font-weight: 700;
+        font-size: 70px;
+      }
       * {
         margin: 0;
         padding: 0;
@@ -19,20 +24,44 @@
         background-color: #fff;
         margin-top: 15px;
       }
-      div{
+      div {
+        position: relative;
         margin-top: 25px;
         text-align: center;
         background-color: #fff;
+      }
+      .one{
+        position: absolute;
+        left: 150px;
+        top: 150px;
+      }
+      .two{
+        position: absolute;
+        top: 80px;
+        right: 150px;
       }
     </style>
   </head>
   <body>
     <p>404 Not Found!</p>
     <div>
+      <ul class="one">
+        <li>伤</li>
+        <li>害</li>
+        <li>不</li>
+        <li>高</li>
+      </ul>
       <img
         src="https://pic1.zhimg.com/80/daa3c5b52b93b069bf118b43244f1552_720w.jpg?source=1940ef5c"
         alt=""
       />
+      <ul class="two">
+        <li>侮</li>
+        <li>辱</li>
+        <li>性</li>
+        <li>极</li>
+        <li>大</li>
+      </ul>
     </div>
   </body>
 </html>
