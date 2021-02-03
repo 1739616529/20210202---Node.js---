@@ -8,7 +8,11 @@ require("http")
     const { url, method } = req;
     if (method === "GET" && url === "/getHeroList") {
       fs.readFile(heroPath, (err, data) => {
-        if (err) return res.end("ERROR");
+        if (err)
+          return res.end(`{
+          "code":500,
+          "msg":"服务器处理失败"
+          }`);
         const heroArr = JSON.parse(data);
 
         res.setHeader("Content-type", "application/json;charset=utf8");
