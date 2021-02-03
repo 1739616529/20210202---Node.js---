@@ -9,14 +9,14 @@ const server = http
       const htmlPath = path.join(__dirname, "./pages/index.html");
       fs.readFile(htmlPath, (err, data) => {
         if (err) return res.end("Error");
-        console.log(data);
+        // console.log(data);
         res.end(data);
       });
     } else {
       const htmlPath = path.join(__dirname, "./pages/404.html");
       fs.readFile(htmlPath, (err, data) => {
         if (err) return res.end("Error");
-        console.log(data);
+        // console.log(data);
         res.end(data);
       });
     }
