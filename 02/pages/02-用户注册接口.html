@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./libs/jquery-1.12.4.min.js"></script>
+    <style>
+      div {
+        box-sizing: border-box;
+        padding-top: 50px;
+        width: 800px;
+        height: 500px;
+        border: 1px solid #ccc;
+        margin: 50px auto;
+      }
+      input {
+        display: block;
+        margin: 50px auto;
+        width: 300px;
+        height: 30px;
+      }
+      button {
+        display: block;
+        margin: 0 auto;
+        width: 300px;
+        height: 30px;
+        text-align: center;
+        border: none;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <form action="" method="post" id="form">
+        <input type="text" name="userName" placeholder="请输入账号" />
+        <input type="password" name="userPwd" placeholder="请输入密码" />
+        <button type="submit">注册</button>
+      </form>
+      <script>
+        $('[type="submit"]').click(function () {
+          e.preventDefault();
+          const userName = $('[name="userName"]').val().trim();
+          const userPwd = $('[name="userPwd"]').val().trim();
+          const form = document.getElementById("form");
+          const fd = new FormData(form);
+          $.ajax({
+            method: "POST",
+            url: "http://127.0.0.1:3001/register",
+            data: fd,
+            contentType: false,
+            processData: false,
+            success: (res) => {
+              console.log(res);
+            },
+          });
+        });
+      </script>
+    </div>
+  </body>
+</html>
